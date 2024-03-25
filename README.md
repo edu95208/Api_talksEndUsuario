@@ -1,6 +1,76 @@
-# M5 - Entrega 1 - Gerenciamento de Tarefas API
+# Gerenciamento de Tarefas API
 
-Está documentação servirá de base para entrega, todas as rotas deverão se comportar assim como está previsto na documentação abaixo:
+Todas as rotas deverão se comportar assim como está previsto na documentação abaixo:
+Cadastro de Usuário - POST /users
+Padrão de Corpo
+```json
+{
+    "name": "John Doe",
+    "email": "johndoe@email.com",
+    "password": "12345678"
+}
+```
+Resposta Padrão (STATUS 201)
+```json
+{
+    "id": 1,
+    "name": "John Doe",
+    "email": "johndoe@email.com"
+}
+```
+Possíveis Erros
+STATUS (409) - E-mail já cadastrado
+```json
+{ "message": "This email is already registered" }
+```
+STATUS (400) - Corpo da requisição não compatível com o padrão
+Login de Usuário - POST /user/login
+Padrão de Corpo
+```json
+{
+    "email": "johndoe@email.com",
+    "password": "12345678"
+}
+```
+Resposta Padrão (STATUS 200)
+```json
+{
+	"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAxMjcwMjk2LCJleHAiOjE3MDEzMTM0OTZ9.Ebru139GF02sx9EFR0PouLrErYyYIcFJgLa6vIfsktA",
+	"user": {
+		"id": 1,
+		"name": "John Doe",
+		"email": "johndoe@email.com"
+	}
+}
+```
+Possíveis Erros
+STATUS (404) - Usuário não existente
+```json
+{ "message": "User not exists" }
+```
+STATUS (401) - E-mail e senha não correspondem
+```json
+{ "message": "Email and password doesn't match" }
+```
+STATUS (400) - Corpo da requisição não compatível com o padrão
+Recuperação de Usuário - GET /users/profile (Requer Autorização)
+Resposta Padrão (STATUS 200)
+```json
+{
+    "id": 1,
+    "name": "John Doe",
+    "email": "johndoe@email.com"
+}
+```
+Gerenciamento de Token
+O gerenciamento do JSON Web Token deverá ser criado com base nos exemplos apresentados em aula.
+
+Possíveis Erros na Validação de Token
+STATUS (401) - O token é obrigatório
+```json
+{ "message": "Token is required" }
+```
+STATUS (401) - Token inválido. Mensagem de erro será gerada pelo próprio JSON Web Token.
 
 ### Criação de tarefa POST /tasks
 
