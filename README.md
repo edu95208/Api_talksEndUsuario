@@ -2,6 +2,7 @@
 
 Todas as rotas deverão se comportar assim como está previsto na documentação abaixo:
 Cadastro de Usuário - POST /users
+
 Padrão de Corpo
 ```json
 {
@@ -25,6 +26,7 @@ STATUS (409) - E-mail já cadastrado
 ```
 STATUS (400) - Corpo da requisição não compatível com o padrão
 Login de Usuário - POST /user/login
+
 Padrão de Corpo
 ```json
 {
