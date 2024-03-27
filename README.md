@@ -1,7 +1,7 @@
 # Gerenciamento de Tarefas API
 
 Todas as rotas deverão se comportar assim como está previsto na documentação abaixo:
-Cadastro de Usuário - POST /users
+## Cadastro de Usuário - POST /users
 
 Padrão de Corpo
 ```json
@@ -25,7 +25,7 @@ STATUS (409) - E-mail já cadastrado
 { "message": "This email is already registered" }
 ```
 STATUS (400) - Corpo da requisição não compatível com o padrão
-Login de Usuário - POST /user/login
+## Login de Usuário - POST /user/login
 
 Padrão de Corpo
 ```json
@@ -45,7 +45,7 @@ Resposta Padrão (STATUS 200)
 	}
 }
 ```
-Possíveis Erros
+## Possíveis Erros
 STATUS (404) - Usuário não existente
 ```json
 { "message": "User not exists" }
@@ -55,7 +55,7 @@ STATUS (401) - E-mail e senha não correspondem
 { "message": "Email and password doesn't match" }
 ```
 STATUS (400) - Corpo da requisição não compatível com o padrão
-Recuperação de Usuário - GET /users/profile (Requer Autorização)
+## Recuperação de Usuário - GET /users/profile (Requer Autorização)
 Resposta Padrão (STATUS 200)
 ```json
 {
@@ -64,7 +64,7 @@ Resposta Padrão (STATUS 200)
     "email": "johndoe@email.com"
 }
 ```
-Gerenciamento de Token
+## Gerenciamento de Token
 O gerenciamento do JSON Web Token deverá ser criado com base nos exemplos apresentados em aula.
 
 Possíveis Erros na Validação de Token
