@@ -1,4 +1,4 @@
-# Gerenciamento de Tarefas API
+# Task Genius API
 
 Todas as rotas deverão se comportar assim como está previsto na documentação abaixo:
 ## Cadastro de Usuário - POST /users
